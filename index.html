@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>$WTF</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="icon" type="image/png" href="images/logo.png">
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Jersey+15+Charted&family=Madimi+One&display=swap');
+	</style>
+</head>
+
+<body class="is-preload">
+	<img id="meow" src="images/1.png" style="display: none;" />
+	<audio id="meowSound" src="images/sound.mp3"></audio>
+	<header id="header">
+		<nav id="nav">
+			<img id="" src="images/qwe.png" />
+		</nav>
+		<div class="content">
+			<img id="fux2" src="images/Fux2.png" />
+		</div>
+		
+		<img id="fux11" src="images/fux11.png" usemap="#image-map">
+		<map name="image-map">
+			<area target="_blank" alt="tg" title="tg" href="https://example.com/TELEGRAM" coords="123,91,176,68,171,120" shape="poly">
+			<area target="_blank" alt="x" title="x" href="https://example.com/x" coords="234,92,281,63,229,112,281,111,238,61" shape="poly">
+		</map>
+	</header>
+	<div class="image-container">
+		<img src="images/fuclp.png" alt="1">
+	  </div>
+
+	  <div class="grid-container">
+		<div class="grid-item">
+		  <img src="images/f1.png" alt="g">
+		</div>
+		<div class="grid-item">
+		  <img src="images/f2.png" alt="r">
+		</div>
+	  </div>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script>
+		// Get references to the fux2, meow, and meowSound elements
+		const fux2Img = document.getElementById("fux2");
+		const meowImg = document.getElementById("meow");
+		const meowSound = document.getElementById("meowSound");
+
+		// Array of meow images
+		const meowImages = ["images/1.png", "images/2.png", "images/3.png"];
+
+		// Function to generate a random position for the meow image
+		function generateRandomPosition() {
+			const screenWidth = window.innerWidth;
+			const screenHeight = window.innerHeight;
+			const maxAllowedX = screenWidth - meowImg.width; // Maximum allowed X coordinate
+			const maxAllowedY = screenHeight - meowImg.height; // Maximum allowed Y coordinate
+			const randomX = Math.random() * maxAllowedX;
+			const randomY = Math.random() * maxAllowedY;
+			return { x: randomX, y: randomY };
+		}
+
+		// Function to handle the click event on the fux2 image
+		fux2Img.addEventListener("click", () => {
+			// Select a random meow image from the array
+			const randomMeowImage = meowImages[Math.floor(Math.random() * meowImages.length)];
+
+			// Set the source of the meow image
+			meowImg.src = randomMeowImage;
+
+			const randomPosition = generateRandomPosition();
+			meowImg.style.left = randomPosition.x + "px";
+			meowImg.style.top = randomPosition.y + "px";
+			meowImg.style.display = "block";
+
+			// Play the meow sound
+			meowSound.play();
+		});
+	</script>
+
+</body>
+
+</html>
